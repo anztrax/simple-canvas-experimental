@@ -1,0 +1,10 @@
+.main-container{
+    text-align: center;
+}
+#myCanvas{
+    display: none;
+}
+
+.humble-canvas{
+    border:1px solid black;
+}
