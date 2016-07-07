@@ -16,13 +16,41 @@ $(function(){
     createPalauFlag(createCanvas(400,200));
     createGreeceFlag(createCanvas(400,200));
     createGuyanaFlag(createCanvas(400,200));
-    createGuyanaFlag(createCanvas(200,100));
+    createBahrainFlag(createCanvas(400,200));
   }
 
   function doCanvasNotSupported(){
     alert('your element is not supported canvas rendering');
   }
 });
+
+function createBahrainFlag(canvasElem){
+  var canvas = canvasElem;
+  var context = canvas.getContext('2d');
+  var width = canvas.width;
+  var height = canvas.height;
+  var triangleHeight =  height / 5;
+  var triangleWidth = width / 8;
+
+  context.fillStyle = '#CE1126';
+  context.fillRect(0,0,width,height);
+
+  context.fillStyle = 'white';
+  context.beginPath();
+  context.lineTo(width/4,0);
+
+  for(var i=0;i<5;i++){
+    //create triangles
+    context.lineTo(width/4 + triangleWidth, (i + 0.5)*triangleHeight);
+    context.lineTo(width/4, (i + 1)*triangleHeight);
+  }
+
+  context.lineTo(width/4,height);
+  context.lineTo(0,height);
+  context.lineTo(0,0);
+  context.closePath();
+  context.fill();
+}
 
 function createGuyanaFlag(canvasElem){
   var canvas = canvasElem;
